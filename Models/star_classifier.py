@@ -76,6 +76,7 @@ X_train_scaled = scaler.fit_transform(X_train)
 X_test_scaled = scaler.transform(X_test)
 
 results = {}
+print(Y_test.value_counts())
 
 #LogisticRegression
 logr = linear_model.LogisticRegression()
@@ -94,3 +95,6 @@ train_evaluate(forest, X_train_scaled, Y_train, X_test_scaled, Y_test, "Random F
 knn = KNeighborsClassifier()
 train_evaluate(knn, X_train_scaled, Y_train, X_test_scaled, Y_test, "K Neighbors")
 
+
+#Small dataset giving overfitting and not full results.
+#Not doing hyperparameter testing as its already close to 100% and moving on
